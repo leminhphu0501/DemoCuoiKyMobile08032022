@@ -4,14 +4,15 @@ import { Animated,Text, View,Image,FlatList,StyleSheet,TouchableOpacity,Animated
 
 import PRODUCTS from '../data/products';
 
-const ProductScreen = (props) => {
+const ProductScreen= (props) => {
     
     const {categoryId} = props.route.params;
    //Danh mục sản phẩm lọc theo yêu cầu
     const products = PRODUCTS.filter(item => item.categoryId === categoryId)
+    console.log(products)
     return(
     
-       <Animated.FlatList style={styles.view}
+       <FlatList style={styles.view}
         numColumns={3}
         data = {products}
         renderItem={({item}) => 
