@@ -1,7 +1,5 @@
 import React from 'react';
-import { Animated,Text, View,Image,FlatList,StyleSheet,TouchableOpacity,AnimatedFlatlist} from 'react-native';
-
-
+import {Text, View,Image,FlatList,StyleSheet,TouchableOpacity,} from 'react-native';
 import PRODUCTS from '../data/products';
 
 const ProductScreen= (props) => {
@@ -10,8 +8,7 @@ const ProductScreen= (props) => {
    //Danh mục sản phẩm lọc theo yêu cầu
     const products = PRODUCTS.filter(item => item.categoryId === categoryId)
     console.log(products)
-    return(
-    
+    return(    
        <FlatList style={styles.view}
         numColumns={3}
         data = {products}

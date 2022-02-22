@@ -1,13 +1,11 @@
 import React from 'react';
 import { Animated,Text, View,Image,FlatList,StyleSheet,TouchableOpacity,AnimatedFlatlist} from 'react-native';
 
-
 import PRODUCTS from '../data/products';
 const ShowAllScreen =(props) => {
-    const {categoryId} = props.router.params
-    const products = PRODUCTS.filter(item => item.categoryId === categoryId)
-    return(
-    
+    //const {categoryId} = props.navigate.params
+    const products = PRODUCTS;//.filter(item => item.categoryId === categoryId)
+    return( 
        <FlatList style={styles.view}
         numColumns={3}
         data = {products}
@@ -15,7 +13,7 @@ const ShowAllScreen =(props) => {
         <TouchableOpacity
         onPress={()=> props.navigation.navigate('DetailScreen',{productId: item.id})}
         >
-            <View style={styles.view} >
+            <View style={styles.viewcha} >
                 <Text style={styles.text}>{item.name}</Text>
                 <Image style={styles.img}
                 source ={{uri: item.image}} 

@@ -17,11 +17,6 @@ const HomeScreen =(props) =>{
                     </TouchableOpacity>
                 </View>
             ),
-            headerRight: ()=>(
-                <View style={styles.header}>
-                </View>
-                
-            )
         })
     }),[props.navigation]
     return (
