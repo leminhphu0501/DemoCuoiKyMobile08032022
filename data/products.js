@@ -27,7 +27,7 @@ const PRODUCTS =[
         pinsac:'5000 mAh',
         categoryId: '1',
         description:'Mô tả chi tiết sản phẩm',
-        isFav: true,
+        isFav: false,
         isBrand : true,
         isSale : true
     },

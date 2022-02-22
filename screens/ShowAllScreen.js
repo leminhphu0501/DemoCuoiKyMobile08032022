@@ -1,13 +1,16 @@
-import React, { Component } from 'react';
-import { View,Image, Text,StyleSheet,FlatList,TouchableOpacity } from 'react-native';
-import CATEGORIES from '../data/categories';
+import React from 'react';
+import { Animated,Text, View,Image,FlatList,StyleSheet,TouchableOpacity,AnimatedFlatlist} from 'react-native';
+
+
 import PRODUCTS from '../data/products';
-const FavoriteScreen = (props) =>{
-    const favProduc = PRODUCTS.filter(item => item.isFav === true)
-    console.log(favProduc)
+const ShowAllScreen =(props) => {
+    const {categoryId} = props.router.params
+    const products = PRODUCTS.filter(item => item.categoryId === categoryId)
     return(
-        <FlatList
-        data = {favProduc}
+    
+       <FlatList style={styles.view}
+        numColumns={3}
+        data = {products}
         renderItem={({item}) => 
         <TouchableOpacity
         onPress={()=> props.navigation.navigate('DetailScreen',{productId: item.id})}
@@ -24,19 +27,20 @@ const FavoriteScreen = (props) =>{
         keyExtractor={item => item.id}
         />
     )    
-}
+};
 const styles = StyleSheet.create({
     view:{
+        flexDirection:'column',
         backgroundColor:'#fff'
     },
-    text:{
-        fontSize:20,
-        textAlign:'center'
-    },
     img:{
-        width: 250, height: 250,
-        alignSelf:'center'
+        width:105, 
+        height:105,
+        margin:5,
+    },
+    text:{
+        fontSize:11,
+        textAlign:'center'
     }
-
-})
-export default FavoriteScreen;
+});
+export default ShowAllScreen;

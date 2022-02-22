@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View,Image, Text,StyleSheet,FlatList,TouchableOpacity } from 'react-native';
 import CATEGORIES from '../data/categories';
 import PRODUCTS from '../data/products';
-const FavoriteScreen = (props) =>{
+const CartScreen = (props) =>{
     const favProduc = PRODUCTS.filter(item => item.isFav === true)
     console.log(favProduc)
     return(
@@ -39,4 +39,4 @@ const styles = StyleSheet.create({
     }
 
 })
-export default FavoriteScreen;
+export default CartScreen;

@@ -1,16 +1,15 @@
 import { NavigationContainer } from '@react-navigation/native';
-import 'react-native-gesture-handler'
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import MyTabs from './navigation/bottomTabnavigation';
 import Navigation from './navigation/navigation';
 export default function App() {
   return (
-   // <Navigation/>
-    <NavigationContainer>
+   <Navigation/>
+   /* <NavigationContainer>
      <MyTabs/>   
    </NavigationContainer>
-  );
+  */
+   );
 }
 
 const styles = StyleSheet.create({

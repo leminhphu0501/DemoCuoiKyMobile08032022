@@ -15,7 +15,7 @@ const DetailScreen = (props) => {
              <Entypo name='star' size={30} color="yellow" />
              </TouchableOpacity>
     })
-})
+}),[props.navigation]
     return(
         <ScrollView style={styles.view}>
             <Image style={styles.img} source={{uri: product.image}}/>
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
         fontSize: 20, 
         fontStyle: 'normal',
         color:'black',
-        
+        textAlign:'auto'
     },
     textBig:{
         fontSize:22,

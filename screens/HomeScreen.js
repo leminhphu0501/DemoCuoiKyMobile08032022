@@ -1,8 +1,29 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import {Animated,View, Text,StyleSheet,Image,FlatList,TouchableOpacity } from 'react-native';
 import CATEGORIES from '../data/categories';
-
+import Ionicons from '@expo/vector-icons/Ionicons'
+import PRODUCTS from '../data/products';
 const HomeScreen =(props) =>{
+    useEffect(()=>{
+        props.navigation.setOptions({
+            title:'HomeScreen',
+            headerTitleStyle:{alignSelf:'center'},
+            headerLeft: ()=>(
+                <View style={styles.header}>
+                    <TouchableOpacity
+                    onPress={() =>props.navigation.openDrawer()}
+                    >
+                    <Ionicons name="ios-menu" size={30} color="black" />
+                    </TouchableOpacity>
+                </View>
+            ),
+            headerRight: ()=>(
+                <View style={styles.header}>
+                </View>
+                
+            )
+        })
+    }),[props.navigation]
     return (
        <Animated.View style={styles.flatlist}>
         <FlatList 
@@ -29,7 +50,7 @@ const styles = StyleSheet.create({
         backgroundColor:'#F0E68C',
     },
     view:{
-        marginTop:50,
+        marginTop:30,
         borderWidth:2,
         padding:15,
         margin:15,
@@ -38,6 +59,9 @@ const styles = StyleSheet.create({
     text:{
         fontSize:20,
         textAlign:'left',
+    },
+    header:{
+
     }
 })
 export default HomeScreen;
