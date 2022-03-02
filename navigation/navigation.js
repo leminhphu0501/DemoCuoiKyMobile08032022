@@ -11,6 +11,7 @@ import FavoriteScreen from '../screens/FavoriteScreen'
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import FilterScreen from '../screens/FilterScreen'
 import { Ionicons } from '@expo/vector-icons';
+import FontAweSome from 'react-native-vector-icons/FontAwesome'
 import CartScreen from '../screens/CartScreen';
 import ShowAllScreen from '../screens/ShowAllScreen'
 const Stack = createNativeStackNavigator();
@@ -66,10 +67,10 @@ const HomeTab = () =>{
     return(
         <Tab.Navigator screenOptions={{
             headerTintColor:'#3688E7',
-            tabBarActiveTintColor:'red',
+            tabBarActiveTintColor:'#00BFFF',
             tabBarActiveBackgroundColor:'#fff',
-            tabBarInactiveBackgroundColor: '#FFFF33',
-            
+            tabBarInactiveBackgroundColor: '#fff',
+           
          }}>
             <Tab.Screen options={{
             headerShown:false,
@@ -83,26 +84,32 @@ const HomeTab = () =>{
             tabBarLabel:'Mục yêu thích',
             color:'black',
             tabBarIcon: ({ color, size }) => (
-            <Ionicons name="star" color={'black'} size={size} />
+            <FontAweSome name='star' color={color} size={size} />
           ),
-        }} name="Mục yêu thích"  component={FavStack} />
+        }} name="Mục yêu thích" component={FavStack} />
         <Tab.Screen options={{
             headerShown:false,
             tabBarLabel:'Giỏ hàng',
             color:'black',
             tabBarIcon: ({ color, size }) => (
-            <Ionicons name="cart" color={'black'} size={size} />
+            <Ionicons name="cart" color={color} size={size} />
           ),
         }} name="Giỏ hàng"  component={CartStack} />
           </Tab.Navigator>
-    
     )
 }
 const Navigation = () =>
 {
     return(
         <NavigationContainer>
-            <Drawer.Navigator>
+            <Drawer.Navigator 
+            screenOptions={{
+                drawerStyle: {
+                  backgroundColor: '#fff',
+                  width: 240,
+                },
+              }}
+            >
                 <Drawer.Screen name="Home" component={HomeTab} options={{headerShown:false}}/>
                 <Drawer.Screen name="Filter" component={FilterStack} options={{headerShown:false}} />
                 <Drawer.Screen name="ShowAll" component ={ShowAllStack} options={{headerShown:false}} />
