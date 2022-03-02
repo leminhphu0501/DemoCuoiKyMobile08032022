@@ -60,23 +60,23 @@ else{
 }
 const styles = StyleSheet.create({
     view:{
-        backgroundColor:'#F0FFFF',
+        backgroundColor:'#E6E6FA',
     },
     viewBig:{
         backgroundColor:'#E6E6FA',
         flex:1
     },
     text:{
-        fontSize:15,
+        fontSize:12,
         textAlign:'center',
         color:"#1E90FF", 
-        fontWeight:'bold',
+        fontWeight:'normal',
         marginTop:30,
         margin:10
     },
     img:{
-        width: 100, height: 100,
-        margin:10
+        width: 150, height: 150,
+        alignSelf:'center'
     },
 
 })

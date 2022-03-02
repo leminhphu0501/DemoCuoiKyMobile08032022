@@ -21,6 +21,7 @@ const DetailScreen = (props) => {
     useEffect(() => {
         props.navigation.setOptions({
             title: 'Chi tiết sản phẩm',
+            
             headerRight: () =>
 
                 <TouchableOpacity
@@ -64,7 +65,7 @@ const DetailScreen = (props) => {
             <TouchableOpacity style={styles.icon}
                 onPress={() =>dispatch({type:'Them_vao_gio_hang',productId:productId})}
             >
-            <FontAweSome name='shopping-cart' color={'#DCDCDC'} size={36}/>
+            <FontAweSome name='shopping-cart' color={'gray'} size={36}/>
             <Text style={styles.giohang}> Thêm vào giỏ hàng ?</Text>
             </TouchableOpacity>
             <CustomRatingBar/>
@@ -84,8 +85,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#E6E6FA',
     },
     img: {
-        width: 420, height: 420, //set width height cho Image 
-        alignItems: 'center',
+        width: 400, height: 375, //set width height cho Image 
+        alignSelf:'center'
     },
     text: {
         fontSize: 18,

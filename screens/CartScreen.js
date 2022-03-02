@@ -60,7 +60,7 @@ const CartScreen = (props) =>{
 }
 const styles = StyleSheet.create({
     flatlist:{
-        backgroundColor:'#F0FFFF'
+        backgroundColor:'#E6E6FA'
     },
     view:{
         marginTop:20
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
         textAlign:'center',
         color:"#1E90FF", 
         fontWeight:'bold',
-        margin:10
+        alignSelf:'center'
     },
     img:{
         width: 150, height: 150,
