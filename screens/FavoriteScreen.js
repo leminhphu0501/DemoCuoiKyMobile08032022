@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
         backgroundColor:'#F0FFFF',
     },
     viewBig:{
-        backgroundColor:'#F0FFF0',
+        backgroundColor:'#E6E6FA',
         flex:1
     },
     text:{

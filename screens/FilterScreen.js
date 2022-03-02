@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     flexDirection: "row",
     margin: 10,
-    backgroundColor:'#fff'
+    backgroundColor:'#E6E6FA'
   },
   img: {
     width: 375,
@@ -94,6 +94,7 @@ const styles = StyleSheet.create({
   },
   switch: {
     transform: [{ scaleX: 1.3 }, { scaleY: 1.3 }],
+    color:'#E6E6FA'
   },
 });
 

@@ -81,7 +81,7 @@ const DetailScreen = (props) => {
 }
 const styles = StyleSheet.create({
     view: {
-        backgroundColor: '#F0FFFF',
+        backgroundColor: '#E6E6FA',
     },
     img: {
         width: 420, height: 420, //set width height cho Image 

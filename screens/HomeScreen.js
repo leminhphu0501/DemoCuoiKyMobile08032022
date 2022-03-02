@@ -33,15 +33,13 @@ const HomeScreen =(props) =>{
             <FontAweSome name='shopping-cart' size={30} color="#fff" />
             </View>
             </View>
-            <ImageSlider 
-        data={[
+            <ImageSlider
+            data={[
             {img: 'https://cdn.tgdd.vn/2022/02/banner/830-300-830x300-20.png'},
             {img: 'https://cdn.tgdd.vn/2022/02/banner/reno6z-830-300-830x300.png'},
             {img: 'https://cdn.tgdd.vn/2022/02/banner/dh83-830-300-830x300-1.png'},
             {img: 'https://cdn.tgdd.vn/2022/02/banner/830-300-830x300-19.png'}
         ]}
-        autoPlay={true} 
-        
         //onItemChanged={(item) => console.log("item", item)}
         closeIconColor="#fff"
     />
@@ -70,13 +68,13 @@ const styles = StyleSheet.create({
     //     alignContent:'center'
     // },
     viewBig:{
-        backgroundColor:'#F0FFFF',
+        backgroundColor:'#c6cbef',
         flex:1
         
     },
     view:{
         marginTop:20,
-        borderWidth:0.5,
+        //borderWidth:0.5,
         padding:15,
         margin:10,
         borderRadius:3.5,
@@ -118,5 +116,9 @@ const styles = StyleSheet.create({
   /*  image:{
         width: 350 ,height:350,margin:20
     }*/
+    img:
+    {
+        width:30
+    }
 })
 export default HomeScreen;

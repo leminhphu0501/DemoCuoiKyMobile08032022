@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
         marginTop:20
     },
     viewBig:{
-        backgroundColor:'#F0FFF0',
+        backgroundColor:'#E6E6FA',
         flex:1
     },
     text:{
