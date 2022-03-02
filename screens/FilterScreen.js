@@ -3,7 +3,6 @@ import { Text, View,Image,StyleSheet,ScrollView,Switch, TouchableOpacity } from 
 import PRODUCTS from '../data/products';
 import {Entypo} from '@expo/vector-icons'
 import Ionicons from '@expo/vector-icons/Ionicons'
-// quản lý vòng đời của của một component và nó phục vụ chúng ta sử dụng trong function component 
 const FilterScreen = (props) => {
     const [isBrandOn,setIsBrandNewOn] = useState(false);
     const [isSaleOn, setIsSaleOn] =useState(false);
