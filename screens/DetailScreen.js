@@ -1,54 +1,130 @@
-import React from 'react';
-import { Text, View,Image,StyleSheet,ScrollView, TouchableOpacity } from 'react-native';
+import React, { useEffect,useState } from 'react';
+import { Text, View, Image, StyleSheet, ScrollView, TouchableOpacity,SafeAreaView } from 'react-native';
 import PRODUCTS from '../data/products';
-import {Entypo} from '@expo/vector-icons'
-import { useEffect } from 'react'; // quản lý vòng đời của của một component và nó phục vụ chúng ta sử dụng trong function component 
+import FontAweSome from 'react-native-vector-icons/FontAwesome'
+import { Entypo } from '@expo/vector-icons'
+import { useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { color } from 'react-native-reanimated';
+import Ionicons from '@expo/vector-icons/Ionicons'
 const DetailScreen = (props) => {
-    const {productId} = props.route.params
+    const { productId } = props.route.params
     const product = PRODUCTS.find(item => item.id === productId)
-    useEffect(()=>{
-         props.navigation.setOptions({
+    const favProduc = useSelector(state => state.favProduc)
+    const isFav = favProduc.some(product => product.id === productId)
+    //const availableProducts = useSelector(state => state.filterProducts)
+    const dispatch = useDispatch()
+    const [defaulRating,setdefaultRating] =useState(0)
+    const [maxRatting, setmaxRatting] =useState([1,2,3,4,5])
+    const starImgFilled = 'https://github.com/tranhonghan/images/blob/main/star_filled.png?raw=true'
+    const starImgCorner = 'https://github.com/tranhonghan/images/blob/main/star_corner.png?raw=true'
+    useEffect(() => {
+        props.navigation.setOptions({
+            title: 'Chi tiết sản phẩm',
             headerRight: () =>
-            <TouchableOpacity 
-            onPress={()=> props.navigation.navigate('FavoriteScreen',{productId: product.id})}
-            >
-             <Entypo name='star' size={30} color="yellow" />
-             </TouchableOpacity>
+
+                <TouchableOpacity
+                    onPress={() =>dispatch({type:'Them_Vao_yeu_thich',productId:productId})}
+                >
+                <Entypo name='star' color={'#DCDCDC'} size={30} />
+
+                </TouchableOpacity>
+        })
     })
-}),[props.navigation]
-    return(
+    const CustomRatingBar = () =>{
+        return(
+            <View style={styles.CustomRatingbarStyle}>
+                {
+                    maxRatting.map((item,key) => {
+                        return(
+                            <TouchableOpacity
+                            activeOpacity={0.7}
+                            key={item}
+                            onPress={()=>setdefaultRating(item)}
+                            >
+                            <Image
+                            style={styles.starImgStyle}
+                            source={
+                                item <= defaulRating
+                                ? {uri:starImgFilled}
+                                : {uri:starImgCorner}
+                            }
+                            />
+                            </TouchableOpacity>
+                        )
+                    })
+                }
+            </View>
+        )
+    }
+    return (
         <ScrollView style={styles.view}>
-            <Image style={styles.img} source={{uri: product.image}}/>
             <Text style={styles.textBig}> {product.name}</Text>
-            <Text style={styles.text}> {product.description}</Text>
-            <Text style={styles.text}> Màn hình: {product.manhinh}</Text>
-            <Text style={styles.text}> Kích thước: {product.kichthuoc}</Text>
+            <Image style={styles.img} source={{ uri: product.image }} />
+            <TouchableOpacity style={styles.icon}
+                onPress={() =>dispatch({type:'Them_vao_gio_hang',productId:productId})}
+            >
+            <FontAweSome name='shopping-cart' color={'#DCDCDC'} size={36}/>
+            <Text style={styles.giohang}> Thêm vào giỏ hàng ?</Text>
+            </TouchableOpacity>
+            <CustomRatingBar/>
+            <Text style={styles.textRating}>{defaulRating + '/' + maxRatting.length}</Text>
+            <Text style={styles.textName}>{product.name}</Text>
+            <Text style={styles.text}> Màn hình: {product.kichthuoc}, {product.manhinh}</Text>
             <Text style={styles.text}> Hệ điều hành: {product.hdh}</Text>
             <Text style={styles.text}> RAM: {product.RAM}</Text>
             <Text style={styles.text}> Bộ nhớ trong:{product.bonhotrong}</Text>
             <Text style={styles.text}> Chip: {product.chip}</Text>
             <Text style={styles.text}> Pin, Sạc: {product.pinsac}</Text>
         </ScrollView>
-    );} 
+    )
+}
 const styles = StyleSheet.create({
-    view:{
-        backgroundColor:'#FFEFD5',
+    view: {
+        backgroundColor: '#F0FFFF',
     },
-    img:{
-        width: 375, height: 380, //set width height cho Image 
-        alignItems:'center', 
+    img: {
+        width: 420, height: 420, //set width height cho Image 
+        alignItems: 'center',
     },
-    text:{
-        fontSize: 18, 
-        fontStyle: 'normal',
-        color:'black',
-        textAlign:'auto'
+    text: {
+        fontSize: 18,
+        color: 'black',
+         fontWeight:'bold'
     },
-    textBig:{
-        fontSize:22,
+    textBig: {
+        fontSize: 20,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        color: '#1E90FF',
+    },
+    textName:{
         fontWeight:'bold',
+        fontSize:20,
+        textAlign:'center'
+    },
+    icon:{
+        alignItems:'center'
+    },
+    giohang:{
+        color:'gray',
+        fontSize:15,
+        alignSelf:'center'
+    },
+    CustomRatingbarStyle:{
+        flexDirection:'row',
+        justifyContent:'center',
+        marginTop:5
+    },
+    starImgStyle:{
+        width:40,
+        height:40,
+        resizeMode:'cover'
+    },
+    textRating:{
         textAlign:'center',
-        color:'#1E90FF',
+        fontSize:20, 
+        fontWeight:'bold'
     }
 })
 
