@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import Ionicons from '@expo/vector-icons/Ionicons'
 const FavoriteScreen = (props) =>{
     //const {productId} = props.route.params
-    // const favProduc = PRODUCTS.filter(item => item.isFav === true)
+    const favProducts = PRODUCTS.filter(item => item.isFav === true)
     const favProduc = useSelector(state => state.favProduc)
     //const isFav = favProduc.some(product => product.id === productId)
     useEffect(()=>{
