@@ -40,6 +40,7 @@ const HomeScreen =(props) =>{
             {img: 'https://cdn.tgdd.vn/2022/02/banner/dh83-830-300-830x300-1.png'},
             {img: 'https://cdn.tgdd.vn/2022/02/banner/830-300-830x300-19.png'}
         ]}
+        // autoPlay={true}
         //onItemChanged={(item) => console.log("item", item)}
         closeIconColor="#fff"
     />
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
     //     alignContent:'center'
     // },
     viewBig:{
-        backgroundColor:'#c6cbef',
+        backgroundColor:'#FFFAFA',
         flex:1
         
     },
@@ -78,7 +79,7 @@ const styles = StyleSheet.create({
         padding:15,
         margin:10,
         borderRadius:3.5,
-        backgroundColor:'#c6cbef'
+        backgroundColor:'#FFFAFA'
     },
     text:{
         fontSize:14,
@@ -89,7 +90,7 @@ const styles = StyleSheet.create({
     headerContainer:{
         flexDirection:'row',
         paddingTop:20,
-        backgroundColor:'#c6cbef'
+        backgroundColor:'#778899'
     },
     inputContainer:{
         backgroundColor:'#fff',
@@ -116,9 +117,9 @@ const styles = StyleSheet.create({
   /*  image:{
         width: 350 ,height:350,margin:20
     }*/
-    img:
-    {
-        width:30
-    }
+    // img:
+    // {
+    //     width:30
+    // }
 })
 export default HomeScreen;

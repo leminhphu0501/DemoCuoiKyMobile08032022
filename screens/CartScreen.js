@@ -2,7 +2,6 @@ import React, { Component,useEffect } from 'react';
 import { View,Image, Text,StyleSheet,FlatList,TouchableOpacity } from 'react-native';
 import PRODUCTS from '../data/products';
 import { useSelector } from 'react-redux';
-import { color } from 'react-native-reanimated';
 import Ionicons from '@expo/vector-icons/Ionicons'
 const CartScreen = (props) =>{
     //const favProduc = PRODUCTS.filter(item => item.isFav === true)
@@ -39,6 +38,7 @@ const CartScreen = (props) =>{
                 <Image style={styles.img}
                 source ={{uri: item.image}} 
              />    
+                <Text style={styles.text}>{item.gia}</Text>
              </View>             
         </TouchableOpacity>
         }
@@ -60,13 +60,13 @@ const CartScreen = (props) =>{
 }
 const styles = StyleSheet.create({
     flatlist:{
-        backgroundColor:'#E6E6FA'
+        backgroundColor:'#fff'
     },
     view:{
         marginTop:20
     },
     viewBig:{
-        backgroundColor:'#E6E6FA',
+        backgroundColor:'#fff',
         flex:1
     },
     text:{
@@ -78,7 +78,8 @@ const styles = StyleSheet.create({
     },
     img:{
         width: 150, height: 150,
-        alignSelf:'center'
+        alignSelf:'center',
+        margin:10
     }
 
 })

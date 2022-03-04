@@ -22,6 +22,21 @@ const reducer =(state= initialState,action) =>{
             return{ ...state,favProduc: copy}
         }
     }
+    if(action.type==='Chua_them_vao_yeu_thich'){
+        const index = state.favProduc.findIndex(product => product.id ===action.productId)
+        console.log(index)
+        if(index >= 0){
+            let copy =[...state.favProduc]
+            copy=copy.splice(index,1)
+            return{ ...state,favProduc: copy}
+        }
+        else{
+            let copy =[...state.favProduc]
+            const product =state.products.find(product => product.id === action.productId)
+            copy = copy.concat(product)
+            return{ ...state,favProduc: copy}
+        }
+    }
     if(action.type === 'Them_vao_gio_hang'){
         const index = state.cartProducts.findIndex(product => product.id ===action.productId)
         console.log(index)

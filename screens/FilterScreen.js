@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     flexDirection: "row",
     margin: 10,
-    backgroundColor:'#E6E6FA'
+    backgroundColor:'#fff'
   },
   img: {
     width: 375,
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: "bold",
     textAlign: "center",
-    color: "#1E90FF",
+    color: "#fff",
   },
   viewBig:{
     backgroundColor:'#fff',

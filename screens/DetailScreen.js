@@ -12,6 +12,7 @@ const DetailScreen = (props) => {
     const product = PRODUCTS.find(item => item.id === productId)
     const favProduc = useSelector(state => state.favProduc)
     const isFav = favProduc.some(product => product.id === productId)
+    console.log(isFav)
     //const availableProducts = useSelector(state => state.filterProducts)
     const dispatch = useDispatch()
     const [defaulRating,setdefaultRating] =useState(0)
@@ -21,14 +22,11 @@ const DetailScreen = (props) => {
     useEffect(() => {
         props.navigation.setOptions({
             title: 'Chi tiết sản phẩm',
-            
             headerRight: () =>
-
                 <TouchableOpacity
                     onPress={() =>dispatch({type:'Them_Vao_yeu_thich',productId:productId})}
                 >
-                <Entypo name='star' color={'#DCDCDC'} size={30} />
-
+                <Entypo name='star-outlined' color={'#DCDCDC'} size={30} />
                 </TouchableOpacity>
         })
     })
@@ -71,7 +69,8 @@ const DetailScreen = (props) => {
             <CustomRatingBar/>
             <Text style={styles.textRating}>{defaulRating + '/' + maxRatting.length}</Text>
             <Text style={styles.textName}>{product.name}</Text>
-            <Text style={styles.text}> Màn hình: {product.kichthuoc}, {product.manhinh}</Text>
+            <Text style={styles.textgia}> Giá:{product.gia}</Text>
+            <Text style={styles.text}> Màn hình: {product.kichthuoc},  {product.manhinh}</Text>
             <Text style={styles.text}> Hệ điều hành: {product.hdh}</Text>
             <Text style={styles.text}> RAM: {product.RAM}</Text>
             <Text style={styles.text}> Bộ nhớ trong:{product.bonhotrong}</Text>
@@ -82,16 +81,22 @@ const DetailScreen = (props) => {
 }
 const styles = StyleSheet.create({
     view: {
-        backgroundColor: '#E6E6FA',
+        backgroundColor: '#fff',
     },
     img: {
-        width: 400, height: 375, //set width height cho Image 
+        width: 400, height: 400, //set width height cho Image 
         alignSelf:'center'
     },
     text: {
         fontSize: 18,
         color: 'black',
-         fontWeight:'bold'
+         fontWeight:'normal',
+         textAlign:'center'
+    },
+    textgia:{
+        fontSize:18,
+        color:'#1E90FF',
+        textAlign:'center'
     },
     textBig: {
         fontSize: 20,
@@ -101,7 +106,7 @@ const styles = StyleSheet.create({
     },
     textName:{
         fontWeight:'bold',
-        fontSize:20,
+        fontSize:22,
         textAlign:'center'
     },
     icon:{
@@ -118,14 +123,14 @@ const styles = StyleSheet.create({
         marginTop:5
     },
     starImgStyle:{
-        width:40,
-        height:40,
+        width:25,
+        height:25,
         resizeMode:'cover'
     },
     textRating:{
         textAlign:'center',
         fontSize:20, 
-        fontWeight:'bold'
+        // fontWeight:'bold'
     }
 })
 

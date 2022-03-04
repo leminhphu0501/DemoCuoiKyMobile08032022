@@ -41,6 +41,7 @@ const FavoriteScreen = (props) =>{
                 <Image style={styles.img}
                 source ={{uri: item.image}} 
              />    
+                <Text style={styles.text}>{item.gia}</Text>
              </View>             
         </TouchableOpacity>
         }
@@ -60,23 +61,22 @@ else{
 }
 const styles = StyleSheet.create({
     view:{
-        backgroundColor:'#E6E6FA',
+        backgroundColor:'#fff',
     },
     viewBig:{
-        backgroundColor:'#E6E6FA',
+        backgroundColor:'#fff',
         flex:1
     },
     text:{
-        fontSize:12,
+        fontSize:18,
         textAlign:'center',
         color:"#1E90FF", 
-        fontWeight:'normal',
-        marginTop:30,
+        fontWeight:'bold',
         margin:10
     },
     img:{
         width: 150, height: 150,
-        alignSelf:'center'
+        alignSelf:'center',
     },
 
 })
