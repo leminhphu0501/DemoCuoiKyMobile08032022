@@ -68,7 +68,7 @@ const HomeTab = () =>{
         <Tab.Navigator screenOptions={{
             headerTintColor:'#3688E7',
             tabBarActiveTintColor:'#fff',
-            tabBarActiveBackgroundColor:'#90EE90',
+            tabBarActiveBackgroundColor:'#2E8B57',
             tabBarInactiveBackgroundColor: '#fff',
            
          }}>

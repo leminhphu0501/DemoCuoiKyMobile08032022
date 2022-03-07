@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
     //     alignContent:'center'
     // },
     viewBig:{
-        backgroundColor:'#90EE90',
+        backgroundColor:'#2E8B57',
         
     },
     view:{
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
     headerContainer:{
         flexDirection:'row',
         paddingTop:20,
-        backgroundColor:'#90EE90'
+        backgroundColor:'#2E8B57'
     },
     inputContainer:{
         backgroundColor:'#fff',

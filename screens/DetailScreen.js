@@ -20,7 +20,7 @@ const DetailScreen = (props) => {
     const starImgFilled = 'https://github.com/tranhonghan/images/blob/main/star_filled.png?raw=true'
     const starImgCorner = 'https://github.com/tranhonghan/images/blob/main/star_corner.png?raw=true'
     useEffect(() => {
-        props.navigation.setOptions({
+        if(isFav==false){props.navigation.setOptions({
             title: 'Chi tiết sản phẩm',
             headerRight: () =>
                 <TouchableOpacity
@@ -29,7 +29,19 @@ const DetailScreen = (props) => {
                 <Entypo name='star-outlined' color={'#DCDCDC'} size={30} />
                 </TouchableOpacity>
         })
-    })
+    }
+        else if(isFav==true){props.navigation.setOptions({
+                title: 'Chi tiết sản phẩm',
+                headerRight: () =>
+                    <TouchableOpacity
+                        onPress={() =>dispatch({type:'Them_Vao_yeu_thich',productId:productId})}
+                    >
+                    <Entypo name='star' color={'#DCDCDC'} size={30} />
+                    </TouchableOpacity>
+            })
+        }
+}
+    )
     const CustomRatingBar = () =>{
         return(
             <View style={styles.CustomRatingbarStyle}>
