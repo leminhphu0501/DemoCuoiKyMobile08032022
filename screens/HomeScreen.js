@@ -6,6 +6,7 @@ import FontAweSome from 'react-native-vector-icons/FontAwesome'
 import { ImageSlider } from "react-native-image-slider-banner";
 import PRODUCTS from '../data/products';
 const HomeScreen =(props) =>{
+    const products = PRODUCTS;
     useEffect(()=>{
         props.navigation.setOptions({
             title:'Trang chủ',
@@ -22,6 +23,7 @@ const HomeScreen =(props) =>{
         })
     }),[props.navigation]
     return (
+        <View>
        <View style={styles.viewBig}>
             <View style= {styles.headerContainer}>
                 <View style={styles.inputContainer}>
@@ -60,6 +62,28 @@ const HomeScreen =(props) =>{
             </TouchableOpacity>}
         keyExtractor={item => item.id}
          />
+        </View>
+        <View>
+        <FlatList style={styles.view}
+            numColumns={3}
+            data = {products}
+            renderItem={({item}) => 
+        <TouchableOpacity
+            onPress={()=> props.navigation.navigate('DetailScreen',{productId: item.id})}
+        >
+             <View style={styles.view1} >
+                <Text style={styles.text2}>{item.name}</Text>
+                <Image style={styles.image}
+                source ={{uri: item.image}} 
+             />    
+                <Text style={styles.text3}>Click vào để xem chi tiết</Text>
+             </View>          
+        </TouchableOpacity>
+        }
+        
+            keyExtractor={item => item.id}
+        />
+          </View>
       </View>
     );
   }
@@ -72,23 +96,43 @@ const styles = StyleSheet.create({
     //     alignContent:'center'
     // },
     viewBig:{
-        backgroundColor:'#f5fffa',
-        flex:1
+        backgroundColor:'#90EE90',
         
     },
     view:{
-        marginTop:20,
-        //borderWidth:0.5,
-        padding:15,
+        padding:17,
         margin:10,
         borderRadius:3.5,
-        backgroundColor:'#FFFAFA'
+        backgroundColor:'#fff',
+        flexDirection:'column',
+    },
+    view1:{
+        padding:12,
+        margin:10,
+        borderRadius:3.5,
+        backgroundColor:'#fff',
+        flexDirection:'column',
     },
     text:{
         fontSize:14,
         textAlign:'center',
         fontWeight:'bold',
         color:'#969696',
+        alignSelf:'center'
+    },
+    text2:{
+        color:'#1E90FF',
+        textAlign:'auto',
+        fontWeight:'bold',
+        fontSize:12,
+        alignSelf:'center'
+    },
+    text3:{
+        color:'#1E90FF',
+        textAlign:'center',
+        fontWeight:'normal',
+        fontSize:10,
+        alignSelf:'center'
     },
     headerContainer:{
         flexDirection:'row',
@@ -117,9 +161,9 @@ const styles = StyleSheet.create({
         alignItems:'center',
         justifyContent:'center'
     },
-  /*  image:{
-        width: 350 ,height:350,margin:20
-    }*/
+    image:{
+        width: 100 ,height:100,margin:20
+    }
     // img:
     // {
     //     width:30

@@ -15,7 +15,7 @@ const DetailScreen = (props) => {
     console.log(isFav)
     //const availableProducts = useSelector(state => state.filterProducts)
     const dispatch = useDispatch()
-    const [defaulRating,setdefaultRating] =useState(0)
+    const [defaulRating,setdefaultRating] =useState(0,0,5)
     const [maxRatting, setmaxRatting] =useState([1,2,3,4,5])
     const starImgFilled = 'https://github.com/tranhonghan/images/blob/main/star_filled.png?raw=true'
     const starImgCorner = 'https://github.com/tranhonghan/images/blob/main/star_corner.png?raw=true'
