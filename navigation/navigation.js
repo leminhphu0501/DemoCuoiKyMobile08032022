@@ -68,7 +68,7 @@ const HomeTab = () =>{
         <Tab.Navigator screenOptions={{
             headerTintColor:'#3688E7',
             tabBarActiveTintColor:'#fff',
-            tabBarActiveBackgroundColor:'#778899',
+            tabBarActiveBackgroundColor:'#90EE90',
             tabBarInactiveBackgroundColor: '#fff',
            
          }}>
@@ -105,6 +105,7 @@ const Navigation = () =>
             <Drawer.Navigator 
             screenOptions={{
                 drawerStyle: {
+                
                   backgroundColor: '#fff',
                   width: 240,
                 },

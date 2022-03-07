@@ -9,7 +9,6 @@ const HomeScreen =(props) =>{
     useEffect(()=>{
         props.navigation.setOptions({
             title:'Trang chủ',
-            
             headerTitleStyle:{alignSelf:'center'},
             headerLeft: ()=>(
                 <View style={styles.header}>
@@ -35,14 +34,18 @@ const HomeScreen =(props) =>{
             </View>
             <ImageSlider
             data={[
-            {img: 'https://cdn.tgdd.vn/2022/02/banner/830-300-830x300-20.png'},
+            {img: 'https://cdn.tgdd.vn/2022/03/banner/S22-830-300-830x300-1.png'},
+            {img: 'https://images.fpt.shop/unsafe/fit-in/800x300/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2022/2/28/637816843611792369_F-H1_800x300.png'},
             {img: 'https://cdn.tgdd.vn/2022/02/banner/reno6z-830-300-830x300.png'},
             {img: 'https://cdn.tgdd.vn/2022/02/banner/dh83-830-300-830x300-1.png'},
-            {img: 'https://cdn.tgdd.vn/2022/02/banner/830-300-830x300-19.png'}
+            {img: 'https://cdn.tgdd.vn/2022/02/banner/830-300-830x300-19.png'},
+            {img: 'https://cdn.tgdd.vn/2022/03/banner/830-300-830x300-1.png'},
+            {img: 'https://cdn.tgdd.vn/2022/03/banner/830-300-830x300-2.png'}
         ]}
-        // autoPlay={true}
-        //onItemChanged={(item) => console.log("item", item)}
-        closeIconColor="#fff"
+        autoPlay={true}
+        caroselImageStyle={{height: 150}}
+        //indicatorContainerStyle={{bottom: 10}}
+        //closeIconColor="#fff"
     />
         <FlatList 
             numColumns={4}
@@ -69,7 +72,7 @@ const styles = StyleSheet.create({
     //     alignContent:'center'
     // },
     viewBig:{
-        backgroundColor:'#FFFAFA',
+        backgroundColor:'#f5fffa',
         flex:1
         
     },
@@ -90,7 +93,7 @@ const styles = StyleSheet.create({
     headerContainer:{
         flexDirection:'row',
         paddingTop:20,
-        backgroundColor:'#778899'
+        backgroundColor:'#90EE90'
     },
     inputContainer:{
         backgroundColor:'#fff',

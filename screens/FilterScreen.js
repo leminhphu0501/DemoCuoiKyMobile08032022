@@ -14,6 +14,7 @@ import { Entypo } from "@expo/vector-icons";
 import Ionicons from "@expo/vector-icons/Ionicons";
 //import { useCallback } from "react";
 import { useDispatch } from "react-redux";
+import { Title } from "react-native-paper";
 // const saveFilter = useCallback (()=>{
 //   dispatch({type: 'SET_FILTER',filters:filters})
 // },[dispatch,isBrandNewOn,isSaleOn]
@@ -28,6 +29,8 @@ const FilterScreen = (props) => {
   }
   useEffect(() =>
     props.navigation.setOptions({
+        title:'Lọc sản phẩm',
+        headerTitleStyle:{alignSelf:'center'},
       headerLeft: () => (
         <View style={styles.header}>
           <TouchableOpacity onPress={() => props.navigation.openDrawer()}>

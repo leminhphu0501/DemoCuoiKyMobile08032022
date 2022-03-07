@@ -54,7 +54,7 @@ const FavoriteScreen = (props) =>{
 else{
     return(
         <View style={styles.viewBig}>
-        <Text style={styles.text}>Không có sản phẩm nào được yêu thích !</Text>
+        <Text style={styles.textOut}>Không có sản phẩm nào được yêu thích !</Text>
         </View>
     )
 }   
@@ -75,9 +75,15 @@ const styles = StyleSheet.create({
         margin:10
     },
     img:{
-        width: 150, height: 150,
+        width: 100, height: 100,
         alignSelf:'center',
     },
-
+    textOut:{
+        fontSize:18,
+        textAlign:'center',
+        color:"#1E90FF", 
+        fontWeight:'bold',
+        margin:10
+    },
 })
 export default FavoriteScreen;
