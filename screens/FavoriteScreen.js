@@ -24,7 +24,6 @@ const FavoriteScreen = (props) =>{
             ),
         })
     }),[props.navigation]
-    console.log(favProduc)
     if(favProduc.length !=0){
     return(
         //<View style={styles.viewBig}>
@@ -41,7 +40,7 @@ const FavoriteScreen = (props) =>{
                 <Image style={styles.img}
                 source ={{uri: item.image}} 
              />    
-                <Text style={styles.text}>{item.gia}</Text>
+                {/* <Text style={styles.text}>{item.gia}</Text> */}
              </View>             
         </TouchableOpacity>
         }

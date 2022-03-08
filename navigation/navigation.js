@@ -105,13 +105,11 @@ const Navigation = () =>
             <Drawer.Navigator 
             screenOptions={{
                 drawerStyle: {
-                
-                  backgroundColor: '#fff',
-                  width: 240,
+                    backgroundColor:'#fff',
                 },
               }}
             >
-                <Drawer.Screen name="Home" component={HomeTab} options={{headerShown:false}}/>
+                <Drawer.Screen name="Home" component={HomeTab} options={{headerShown:false,}}/>
                 <Drawer.Screen name="Filter" component={FilterStack} options={{headerShown:false}} />
                 <Drawer.Screen name="ShowAll" component ={ShowAllStack} options={{headerShown:false}} />
             </Drawer.Navigator>

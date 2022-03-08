@@ -6,7 +6,6 @@ import Ionicons from '@expo/vector-icons/Ionicons'
 const CartScreen = (props) =>{
     //const favProduc = PRODUCTS.filter(item => item.isFav === true)
     const cartProducts = useSelector(state => state.cartProducts)
-    console.log(cartProducts)
     useEffect(()=>{
         props.navigation.setOptions({
             title:'Giỏ hàng',

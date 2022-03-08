@@ -11,14 +11,13 @@ const DetailScreen = (props) => {
     const { productId } = props.route.params
     const product = PRODUCTS.find(item => item.id === productId)
     const favProduc = useSelector(state => state.favProduc)
-    const isFav = favProduc.some(product => product.id === productId)
-    console.log(isFav)
     //const availableProducts = useSelector(state => state.filterProducts)
     const dispatch = useDispatch()
     const [defaulRating,setdefaultRating] =useState(0,0,5)
     const [maxRatting, setmaxRatting] =useState([1,2,3,4,5])
     const starImgFilled = 'https://github.com/tranhonghan/images/blob/main/star_filled.png?raw=true'
     const starImgCorner = 'https://github.com/tranhonghan/images/blob/main/star_corner.png?raw=true'
+    const isFav = favProduc.some(product => product.id === productId)
     useEffect(() => {
         if(isFav==false){props.navigation.setOptions({
             title: 'Chi tiết sản phẩm',
@@ -36,7 +35,7 @@ const DetailScreen = (props) => {
                     <TouchableOpacity
                         onPress={() =>dispatch({type:'Them_Vao_yeu_thich',productId:productId})}
                     >
-                    <Entypo name='star' color={'#DCDCDC'} size={30} />
+                    <Entypo name='star' color={'yellow'} size={30} />
                     </TouchableOpacity>
             })
         }
