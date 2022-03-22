@@ -9,7 +9,7 @@ const initialState ={
 const reducer =(state= initialState,action) =>{
     if(action.type === 'Them_Vao_yeu_thich'){
         const index = state.favProduc.findIndex(product => product.id ===action.productId)
-        console.log(index)
+        // console.log(index)
         if(index >= 0){
             let copy =[...state.favProduc]
             copy=copy.splice(index,1)
@@ -24,7 +24,7 @@ const reducer =(state= initialState,action) =>{
     }
     if(action.type==='Chua_them_vao_yeu_thich'){
         const index = state.favProduc.findIndex(product => product.id ===action.productId)
-        console.log(index)
+        // console.log(index)
         if(index >= 0){
             let copy =[...state.favProduc]
             copy=copy.splice(index,1)
@@ -39,7 +39,7 @@ const reducer =(state= initialState,action) =>{
     }
     if(action.type === 'Them_vao_gio_hang'){
         const index = state.cartProducts.findIndex(product => product.id ===action.productId)
-        console.log(index)
+        // console.log(index)
         if(index >= 0){
             let copy =[...state.cartProducts]
             copy=copy.splice(index,1)
@@ -54,7 +54,7 @@ const reducer =(state= initialState,action) =>{
     }
     if(action.type === 'LOC_SAN_PHAM' ){
         const filters = action.filters
-        console.log(filters)
+        // console.log(filters)
         const filterProducts = state.products.filter(product =>{
             if(filters.isBrandOn != product.isBrand){
                 return false

@@ -69,14 +69,14 @@ const styles = StyleSheet.create({
         flex:1
     },
     text:{
-        fontSize:14,
+        fontSize:12,
         textAlign:'center',
         color:"#1E90FF", 
         fontWeight:'bold',
         alignSelf:'center'
     },
     img:{
-        width: 150, height: 150,
+        width: 120, height: 120,
         alignSelf:'center',
         margin:10
     }
