@@ -3,10 +3,7 @@ import { Text, View, Image, StyleSheet, ScrollView, TouchableOpacity,SafeAreaVie
 import PRODUCTS from '../data/products';
 import FontAweSome from 'react-native-vector-icons/FontAwesome'
 import { Entypo } from '@expo/vector-icons'
-import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { color } from 'react-native-reanimated';
-import Ionicons from '@expo/vector-icons/Ionicons'
 const DetailScreen = (props) => {
     const { productId } = props.route.params
     const product = PRODUCTS.find(item => item.id === productId)
